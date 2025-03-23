@@ -1,3 +1,4 @@
+import "./components/web-preview.js";
 import { books, authors, genres, BOOKS_PER_PAGE } from "./data.js";
 import { createBookPreviews, populateDropdown, setTheme } from "./functions.js";
 
@@ -49,6 +50,8 @@ document.querySelector("[data-list-button]").innerHTML = `
 // All the different type of eventlistners (Also in functions.js??)
 function setUpEventListeners() {
   // Search Overlay - To open/close
+  const data_header = document.querySelector("[data-header-search]");
+  console.log(data_header);
   document
     .querySelector("[data-header-search]")
     .addEventListener("click", () => {
@@ -193,4 +196,6 @@ function setUpEventListeners() {
     });
 }
 
-setUpEventListeners();
+document.addEventListener("DOMContentLoaded", () => {
+  setUpEventListeners();
+});
